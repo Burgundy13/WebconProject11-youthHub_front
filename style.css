@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+:root {
+    --fontFamily: 'Roboto', sans-serif;
+    --fontSize: 18px;
+    --primary: #333;
+    --secondary: #7e8b43;
+    --white: #fff;
+    --black: #000
+    --lightGray: #bfbfbf;
+    --transition: .3s ease;
+    --padding: 80px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    line-height: 1.6;
+}
+a:hover {
+    transition: var(--transition);
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 4rem;
+    text-align: center;
+}
+h2::after {
+    display: block;
+    content: "";
+    background: var(--primary);
+    height: 5px;
+    width: 50px;
+    margin: 10px auto 30px auto ;
+}
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+button:hover {
+    background: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+/*****NAV*****/
+
+nav {
+    position: fixed;
+    width: 100%;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 30px;
+}
+nav ul li a {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+nav ul li a:hover {
+    color: var(--lightGray);
+    
+}
+.menu-icon,
+.close-icon {
+    position: fixed;
+    right: 25px;
+    top: 15px;
+    z-index: 999;
+    color: var(--primary);
+    font-size: 1.5rem;
+    padding: 5px;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .5s;
+}
+.menu-icon.active,
+.close-icon.active {
+    opacity: 1;
+    top: 20px;
+    pointer-events: auto;
+}
+.main-menu {
+    background: var(--secondary);
+    height: 100vh;
+    transition: all .5s;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.main-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-menu ul li {
+    margin: 25px 0;
+    opacity: 0;
+    transition: all 1s;
+    list-style: none;
+}
+.main-menu ul li a {
+    color: var(--white);
+    font-size: 30px;
+    text-decoration: none;
+    transform: all 0s;
+}
+.main-menu ul li a:hover {
+    color: var(--black);
+}
+.main-menu.active {
+    top: 0;
+    
+}
+.main-menu.active ul li {
+    opacity: 1;
+}
+/*****HEADER*****/
+
+header {
+    background-image: url(/img/youth-hub-header3.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 50px;
+    font-size: 6rem;
+    color: var(--white);
+
+}
+/*****O NAMA*****/
+
+.onama {
+    padding: var(--padding);
+    text-align: center;
+}
+.onama h2 {
+    color: var(--secondary);
+    text-shadow: 0 0 1px var(--primary);
+}
+
+/*****BLOG*****/
+
+.blog  {
+    background-image: url(/img/blog.jpg);
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    padding: 500px 0;    
+    color: var(--white);
+    
+}
+.blog img {
+    width: 100%;
+}
+.blog .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog .container article {
+    flex: 0 0 30%;
+}
+.blog h2 {
+    text-align: center;
+    color: var(--primary);
+
+}
+.blog h3 {
+    font-size: 2rem;
+    color: var(--primary);
+}
+.blog .meta {
+    background: var(--primary);
+    border-radius: 3px;
+    padding: 5px 10px;
+    display: inline-block;
+    color: var(--white);
+}
+.blog p {
+    padding: 20px 0;
+    text-align: justify;
+}
+
+/*****FOOTER*****/
+
+footer {
+    background-image: url(/img/footer.jpg);
+    background-position: top;
+    background-size: cover;
+    padding: 300px 0 150px;
+    color: var(--white);
+}
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+footer article {
+    flex: 0 0 30%;
+}
+footer .row {
+    margin-top: 50px;
+}
+footer h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+footer hr {
+    width: 100%;
+    height: 1px;
+    background: var(--white);
+    border: none;
+    margin: 60px 0;
+}
+footer a {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary);
+}
+footer a:hover {
+    color: var(--white);
+}
+
+/*****RESPONSIVE*****/
+@media(max-width: 768px) {
+    h2 {
+        font-size: 3rem;
+        
+    }
+    nav {
+        margin: 0 auto;
+        background-color: var(--secondary);
+        
+    }
+    header {
+        height: 50vh;
+    }
+    header h1 {
+        letter-spacing: 25px;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .onama p {
+    padding: 0 20px;
+    }
+    .blog {
+        padding: 50px;
+    }
+    .blog .container {
+        gap: 30px;
+    }
+    .blog .container article {
+        flex: 0 0 100%;
+        
+    }
+    footer article {
+        flex: 0 0 100%;
+    }
+    footer {
+        
+        padding: 50px 20px 50px;
+        
+    }
+}
